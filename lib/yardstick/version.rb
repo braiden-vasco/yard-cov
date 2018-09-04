@@ -1,4 +1,4 @@
 module Yardstick
   # Gem version
-  VERSION = '0.9.9'.freeze
+  VERSION = '0.0.0'.freeze
 end
