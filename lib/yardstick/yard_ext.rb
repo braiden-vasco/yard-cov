@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 module YARD  #:nodoc: all
   # Test if JRuby head is being used
   JRUBY_19MODE = RUBY_VERSION >= '1.9' && RUBY_ENGINE.eql?('jruby')

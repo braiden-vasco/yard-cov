@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 module Yardstick
   # Parses files and strings using YARD
   class Parser

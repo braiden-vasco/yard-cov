@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 module Yardstick
   # A set of yardstick measurements
   class MeasurementSet < OrderedSet

@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 module Yardstick
   # Handle procesing a docstring or path of files
   class Processor
