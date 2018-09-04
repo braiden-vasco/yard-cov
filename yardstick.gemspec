@@ -1,4 +1,9 @@
-require File.expand_path('../lib/yardstick/version', __FILE__)
+# frozen_string_literal: true
+
+lib = File.expand_path('lib', __dir__).freeze
+$LOAD_PATH.unshift lib unless $LOAD_PATH.include? lib
+
+require 'yardstick/version'
 
 Gem::Specification.new do |gem|
   gem.name        = 'yardstick'
