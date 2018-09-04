@@ -9,10 +9,13 @@ Gem::Specification.new do |spec|
   spec.name     = 'yardstick'
   spec.version  = Yardstick::VERSION
   spec.license  = 'MIT'
-  spec.homepage = 'https://github.com/dkubb/yardstick'
+  spec.homepage = 'https://github.com/braiden-vasco/yard-cov'
   spec.summary  = 'YARD documentation coverage measurement tool'
+  spec.platform = Gem::Platform::RUBY
 
-  spec.authors = ['Dan Kubb']
+  spec.required_ruby_version = '~> 2.3'
+
+  spec.authors = ['Dan Kubb', 'Braiden Vasco']
   spec.email   = %w[dan.kubb@gmail.com]
 
   spec.description = <<-DESCRIPTION.split.join ' '
@@ -20,6 +23,12 @@ Gem::Specification.new do |spec|
     the source and provide feedback on what is missing from the documentation
     and what can be improved.
   DESCRIPTION
+
+  spec.metadata = {
+    'homepage_uri'    => 'https://github.com/braiden-vasco/yard-cov',
+    'source_code_uri' => 'https://github.com/braiden-vasco/yard-cov',
+    'bug_tracker_uri' => 'https://github.com/braiden-vasco/yard-cov/issues',
+  }.freeze
 
   spec.require_paths    = %w[lib]
   spec.files            = `git ls-files`.split("\n")
