@@ -6,14 +6,16 @@ $LOAD_PATH.unshift lib unless $LOAD_PATH.include? lib
 require 'yardstick/version'
 
 Gem::Specification.new do |gem|
-  gem.name        = 'yardstick'
-  gem.version     = Yardstick::VERSION.dup
-  gem.authors     = ['Dan Kubb']
-  gem.email       = %w[dan.kubb@gmail.com]
+  gem.name     = 'yardstick'
+  gem.version  = Yardstick::VERSION
+  gem.license  = 'MIT'
+  gem.homepage = 'https://github.com/dkubb/yardstick'
+  gem.summary  = 'A tool for verifying YARD documentation coverage'
+
+  gem.authors = ['Dan Kubb']
+  gem.email   = %w[dan.kubb@gmail.com]
+
   gem.description = 'Measure YARD documentation coverage'
-  gem.summary     = 'A tool for verifying YARD documentation coverage'
-  gem.homepage    = 'https://github.com/dkubb/yardstick'
-  gem.licenses    = 'MIT'
 
   gem.require_paths    = %w[lib]
   gem.files            = `git ls-files`.split("\n")
