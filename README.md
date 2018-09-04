@@ -12,12 +12,26 @@ on what is missing from the documentation and what can be improved.
 
 
 
+Table of contents
+-----------------
+
+* [Overview](#yardstick)
+* [Table of contents](#table-of-contents)
+* [Usage](#usage)
+  * [Command-line tool](#command-line-tool)
+  * [Rake task](#rake-task)
+  * [Libraries](#libraries)
+  * [Configuration](#configuration)
+* [TODO](#todo)
+
+
+
 Usage
 -----
 
 Yardstick may be used three ways:
 
-### 1. Command-line Tool
+### Command-line tool
 
 This is the simplest way to run yardstick.  Provide it a list of files
 and it will measure all of them and output suggestions for improvement,
@@ -27,7 +41,7 @@ eg:
 $ yardstick 'lib/**/*.rb' 'app/**/*.rb' ...etc...
 ```
 
-### 2. Rake task
+### Rake task
 
 Yardstick may be integrated with existing Rakefile and build processes,
 and is especially useful when used with a continuous integration system.
@@ -54,7 +68,7 @@ Yardstick::Rake::Verify.new do |verify|
 end
 ```
 
-### 3. Libraries
+### Libraries
 
 Yardstick comes with several libraries that will allow you to process
 lists of files, or String code fragments, eg:
@@ -81,7 +95,7 @@ measurements = Yardstick.measure_string <<-RUBY
 RUBY
 ```
 
-### 4. Configuration
+### Configuration
 
 Every rule in Yardstick can be turned off globally and locally. All rules are enabled and threshold is set to maximum by default (100%). If your documentation coverage is below or above this threshold then yardstick will exit with a nonzero status and print that fact.
 
