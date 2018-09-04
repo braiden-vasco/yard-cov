@@ -2,9 +2,9 @@ yardstick
 =========
 
 [![Gem Version](https://badge.fury.io/rb/yard-cov.svg)](http://badge.fury.io/rb/yard-cov)
-[![Build Status](https://travis-ci.org/braiden-vasco/yard-cov.rb.svg)](https://travis-ci.org/braiden-vasco/yard-cov.rb)
-[![Coverage Status](https://coveralls.io/repos/github/braiden-vasco/yard-cov.rb/badge.svg)](https://coveralls.io/github/braiden-vasco/yard-cov.rb)
-[![Inline docs](http://inch-ci.org/github/braiden-vasco/yard-cov.rb.svg?branch=master)](http://inch-ci.org/github/braiden-vasco/yard-cov.rb)
+[![Build Status](https://travis-ci.org/braiden-vasco/yard-cov.svg)](https://travis-ci.org/braiden-vasco/yard-cov)
+[![Coverage Status](https://coveralls.io/repos/github/braiden-vasco/yard-cov/badge.svg)](https://coveralls.io/github/braiden-vasco/yard-cov)
+[![Inline docs](http://inch-ci.org/github/braiden-vasco/yard-cov.svg?branch=master)](http://inch-ci.org/github/braiden-vasco/yard-cov)
 
 **yard-cov** is [YARD](https://yardoc.org) documentation coverage
 measurement tool. It will measure the source and provide feedback
