@@ -1,17 +1,10 @@
 yardstick
 =========
 
-[![Gem Version](http://img.shields.io/gem/v/yardstick.svg)][gem]
-[![Build status](https://img.shields.io/circleci/project/dkubb/yardstick.svg)][circle]
-[![Dependency Status](http://img.shields.io/gemnasium/dkubb/yardstick.svg)][gemnasium]
-[![Code Climate](http://img.shields.io/codeclimate/github/dkubb/yardstick.svg)][codeclimate]
-[![Coverage Status](http://img.shields.io/coveralls/dkubb/yardstick.svg)][coveralls]
-
-[gem]: https://rubygems.org/gems/yardstick
-[circle]: https://circleci.com/gh/dkubb/yardstick
-[gemnasium]: https://gemnasium.com/dkubb/yardstick
-[codeclimate]: https://codeclimate.com/github/dkubb/yardstick
-[coveralls]: https://coveralls.io/r/dkubb/yardstick
+[![Gem Version](https://badge.fury.io/rb/yard-cov.svg)](http://badge.fury.io/rb/yard-cov)
+[![Build Status](https://travis-ci.org/braiden-vasco/yard-cov.rb.svg)](https://travis-ci.org/braiden-vasco/yard-cov.rb)
+[![Coverage Status](https://coveralls.io/repos/github/braiden-vasco/yard-cov.rb/badge.svg)](https://coveralls.io/github/braiden-vasco/yard-cov.rb)
+[![Inline docs](http://inch-ci.org/github/braiden-vasco/yard-cov.rb.svg?branch=master)](http://inch-ci.org/github/braiden-vasco/yard-cov.rb)
 
 Yardstick is a tool that verifies documentation coverage of Ruby code.  It will measure the source and provide feedback on what is missing from the documentation and what can be improved.
 
