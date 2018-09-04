@@ -14,9 +14,6 @@
 
 Yardstick is a tool that verifies documentation coverage of Ruby code.  It will measure the source and provide feedback on what is missing from the documentation and what can be improved.
 
-* [Git](https://github.com/dkubb/yardstick)
-* [Bug Tracker](https://github.com/dkubb/yardstick/issues)
-
 ## Usage
 
 Yardstick may be used three ways:
