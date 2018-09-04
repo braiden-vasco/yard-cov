@@ -146,3 +146,19 @@ options = YAML.load_file('config/yardstick.yml')
 
 Yardstick::Rake::Verify.new(:verify_measurements, options)
 ```
+
+
+
+TODO
+----
+
+* Add more measurements, especially for @param, @yield and type
+  validation
+* Update yardstick_measure task to use the Yardstick::CLI library
+  underneath.
+* Output results as HTML from command line tool and Rake task
+* Specify method_missing to allow public, semipublic or private even
+  if its visibility is private
+* Allow initialize to be public, semipublic or private regardless of
+  its visibility. A constructor may not necessarily be public, and may
+  not be used externally.
