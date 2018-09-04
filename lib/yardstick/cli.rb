@@ -66,5 +66,5 @@ module Yardstick
     class << self
       private :option_parser, :parse_config, :display_exit
     end
-  end # module CLI
-end # module Yardstick
+  end
+end

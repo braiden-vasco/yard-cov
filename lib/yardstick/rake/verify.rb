@@ -141,6 +141,6 @@ module Yardstick
       def higher_coverage?
         total_coverage > threshold
       end
-    end # class Verify
-  end # module Rake
-end # module Yardstick
+    end
+  end
+end

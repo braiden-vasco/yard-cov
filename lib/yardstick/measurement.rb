@@ -102,5 +102,5 @@ module Yardstick
       return :skip if !@rule.enabled? || !@rule.validatable?
       @rule.valid?
     end
-  end # class Measurement
-end # module Yardstick
+  end
+end

@@ -51,5 +51,5 @@ module Yardstick
 
     RED_BOLD          = new(:red, :bold)
     YELLOW_UNDERLINED = new(:yellow, :underline)
-  end # class Decorator
-end # module Yardstick
+  end
+end

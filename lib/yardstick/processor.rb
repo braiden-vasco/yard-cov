@@ -36,5 +36,5 @@ module Yardstick
     def paths
       Array(config.path).map(&:to_s)
     end
-  end # class Processor
-end # module Yardstick
+  end
+end

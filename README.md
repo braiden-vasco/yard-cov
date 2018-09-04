@@ -143,9 +143,9 @@ rules:
   ApiTag::Presence:
     enabled: true
     exclude:
-      - Foo::Bar  # class or module
-      - Foo#bar   # instance method
-      - Foo.bar   # class method
+      - Foo::Bar # class or module
+      - Foo#bar  # instance method
+      - Foo.bar  # class method
 ```
 
 Rake tasks take these options as a second argument:

@@ -111,5 +111,5 @@ module Yardstick
     def index(entry)
       @index[entry]
     end
-  end # class OrderedSet
-end # module Yardstick
+  end
+end

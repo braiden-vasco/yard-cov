@@ -54,6 +54,6 @@ module Yardstick
         desc "Measure docs in #{config.path} with yardstick"
         task(name) { yardstick_measure }
       end
-    end # class Measurement
-  end # module Rake
-end # module Yardstick
+    end
+  end
+end

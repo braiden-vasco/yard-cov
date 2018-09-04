@@ -123,5 +123,5 @@ module Yardstick
     def total_text
       'Total: %d' % total
     end
-  end # class MeasurementSet
-end # module Yardstick
+  end
+end
