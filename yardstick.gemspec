@@ -20,7 +20,7 @@ Gem::Specification.new do |gem|
   gem.require_paths    = %w[lib]
   gem.files            = `git ls-files`.split("\n")
   gem.test_files       = `git ls-files -- spec/{unit,integration}`.split("\n")
-  gem.extra_rdoc_files = %w[LICENSE README.md CONTRIBUTING.md TODO]
+  gem.extra_rdoc_files = %w[LICENSE README.md TODO]
   gem.executables      = %w[yardstick]
 
   gem.add_runtime_dependency 'abstract_type', '~> 0.0'
