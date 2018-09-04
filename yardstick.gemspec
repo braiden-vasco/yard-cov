@@ -10,12 +10,16 @@ Gem::Specification.new do |gem|
   gem.version  = Yardstick::VERSION
   gem.license  = 'MIT'
   gem.homepage = 'https://github.com/dkubb/yardstick'
-  gem.summary  = 'A tool for verifying YARD documentation coverage'
+  gem.summary  = 'YARD documentation coverage measurement tool'
 
   gem.authors = ['Dan Kubb']
   gem.email   = %w[dan.kubb@gmail.com]
 
-  gem.description = 'Measure YARD documentation coverage'
+  gem.description = <<-DESCRIPTION.split.join ' '
+    yard-cov is YARD documentation coverage measurement tool. It will measure
+    the source and provide feedback on what is missing from the documentation
+    and what can be improved.
+  DESCRIPTION
 
   gem.require_paths    = %w[lib]
   gem.files            = `git ls-files`.split("\n")

@@ -6,7 +6,9 @@ yardstick
 [![Coverage Status](https://coveralls.io/repos/github/braiden-vasco/yard-cov.rb/badge.svg)](https://coveralls.io/github/braiden-vasco/yard-cov.rb)
 [![Inline docs](http://inch-ci.org/github/braiden-vasco/yard-cov.rb.svg?branch=master)](http://inch-ci.org/github/braiden-vasco/yard-cov.rb)
 
-Yardstick is a tool that verifies documentation coverage of Ruby code.  It will measure the source and provide feedback on what is missing from the documentation and what can be improved.
+**yard-cov** is [YARD](https://yardoc.org) documentation coverage
+measurement tool. It will measure the source and provide feedback
+on what is missing from the documentation and what can be improved.
 
 
 
