@@ -1,4 +1,5 @@
-# yardstick
+yardstick
+=========
 
 [![Gem Version](http://img.shields.io/gem/v/yardstick.svg)][gem]
 [![Build status](https://img.shields.io/circleci/project/dkubb/yardstick.svg)][circle]
@@ -14,7 +15,10 @@
 
 Yardstick is a tool that verifies documentation coverage of Ruby code.  It will measure the source and provide feedback on what is missing from the documentation and what can be improved.
 
-## Usage
+
+
+Usage
+-----
 
 Yardstick may be used three ways:
 
@@ -142,11 +146,3 @@ options = YAML.load_file('config/yardstick.yml')
 
 Yardstick::Rake::Verify.new(:verify_measurements, options)
 ```
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
-## Copyright
-
-Copyright (c) 2009-2013 Dan Kubb. See LICENSE for details.
