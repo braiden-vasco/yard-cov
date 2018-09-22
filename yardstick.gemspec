@@ -34,7 +34,9 @@ Gem::Specification.new do |spec|
   spec.files            = `git ls-files`.split("\n")
   spec.test_files       = `git ls-files -- spec/{unit,integration}`.split("\n")
   spec.extra_rdoc_files = %w[LICENSE README.md]
-  spec.executables      = %w[yardstick]
+
+  spec.bindir      = 'exe'
+  spec.executables = spec.files.grep %r{^exe/}, &File.method(:basename)
 
   spec.add_runtime_dependency 'abstract_type', '~> 0.0'
   spec.add_runtime_dependency 'adamantium',    '~> 0.2'
