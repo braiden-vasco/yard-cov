@@ -3,11 +3,11 @@
 lib = File.expand_path('lib', __dir__).freeze
 $LOAD_PATH.unshift lib unless $LOAD_PATH.include? lib
 
-require 'yardstick/version'
+require 'yard/cov/version'
 
 Gem::Specification.new do |spec|
-  spec.name     = 'yardstick'
-  spec.version  = Yardstick::VERSION
+  spec.name     = 'yard-cov'
+  spec.version  = YARD::Cov::VERSION
   spec.license  = 'MIT'
   spec.homepage = 'https://github.com/braiden-vasco/yard-cov'
   spec.summary  = 'YARD documentation coverage measurement tool'

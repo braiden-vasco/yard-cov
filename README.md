@@ -1,5 +1,5 @@
-yardstick
-=========
+::YARD::Cov
+===========
 
 [![Gem Version](https://badge.fury.io/rb/yard-cov.svg)](http://badge.fury.io/rb/yard-cov)
 [![Build Status](https://travis-ci.org/braiden-vasco/yard-cov.svg)](https://travis-ci.org/braiden-vasco/yard-cov)
@@ -15,7 +15,7 @@ on what is missing from the documentation and what can be improved.
 Table of contents
 -----------------
 
-* [Overview](#yardstick)
+* [Overview](#yardcov)
 * [Table of contents](#table-of-contents)
 * [Usage](#usage)
   * [Command-line tool](#command-line-tool)
@@ -29,21 +29,21 @@ Table of contents
 Usage
 -----
 
-Yardstick may be used three ways:
+**yard-cov** may be used three ways:
 
 ### Command-line tool
 
-This is the simplest way to run yardstick.  Provide it a list of files
+This is the simplest way to run **yard-cov**.  Provide it a list of files
 and it will measure all of them and output suggestions for improvement,
 eg:
 
 ```sh
-$ yardstick 'lib/**/*.rb' 'app/**/*.rb' ...etc...
+$ yard-cov 'lib/**/*.rb' 'app/**/*.rb' ...etc...
 ```
 
 ### Rake task
 
-Yardstick may be integrated with existing Rakefile and build processes,
+**yard-cov** may be integrated with existing Rakefile and build processes,
 and is especially useful when used with a continuous integration system.
 You can set thresholds, as well as check that the threshold matches the
 actual coverage, forcing you to bump it up if the actual coverage has
@@ -52,35 +52,35 @@ increased.  It uses a simple DSL to configure the task eg:
 ```ruby
 # measure coverage
 
-require 'yardstick/rake/measurement'
+require 'yard/cov/rake/measurement'
 
-Yardstick::Rake::Measurement.new(:yardstick_measure) do |measurement|
+YARD::Cov::Rake::Measurement.new(:yardcov_measure) do |measurement|
   measurement.output = 'measurement/report.txt'
 end
 
 
 # verify coverage
 
-require 'yardstick/rake/verify'
+require 'yard/cov/rake/verify'
 
-Yardstick::Rake::Verify.new do |verify|
+YARD::Cov::Rake::Verify.new do |verify|
   verify.threshold = 100
 end
 ```
 
 ### Libraries
 
-Yardstick comes with several libraries that will allow you to process
+**yard-cov** comes with several libraries that will allow you to process
 lists of files, or String code fragments, eg:
 
 ```ruby
-require 'yardstick'
+require 'yard/cov'
 
 # measure a list of file paths
-measurements = Yardstick.measure(paths)
+measurements = YARD::Cov.measure(paths)
 
 # measure a code fragment
-measurements = Yardstick.measure_string <<-RUBY
+measurements = YARD::Cov.measure_string <<-RUBY
   # Displays the message provided to stdout
   #
   # @param [#to_str] message
@@ -97,7 +97,7 @@ RUBY
 
 ### Configuration
 
-Every rule in Yardstick can be turned off globally and locally. All rules are enabled and threshold is set to maximum by default (100%). If your documentation coverage is below or above this threshold then yardstick will exit with a nonzero status and print that fact.
+Every rule in **yard-cov** can be turned off globally and locally. All rules are enabled and threshold is set to maximum by default (100%). If your documentation coverage is below or above this threshold then **yard-cov** will exit with a nonzero status and print that fact.
 
 Default configuration:
 ```yaml
@@ -151,9 +151,9 @@ rules:
 Rake tasks take these options as a second argument:
 
 ```ruby
-options = YAML.load_file('config/yardstick.yml')
+options = YAML.load_file('config/yard-cov.yml')
 
-Yardstick::Rake::Verify.new(:verify_measurements, options)
+YARD::Cov::Rake::Verify.new(:verify_measurements, options)
 ```
 
 
@@ -163,7 +163,7 @@ TODO
 
 * Add more measurements, especially for @param, @yield and type
   validation
-* Update yardstick_measure task to use the Yardstick::CLI library
+* Update yardcov_measure task to use the YARD::Cov::CLI library
   underneath.
 * Output results as HTML from command line tool and Rake task
 * Specify method_missing to allow public, semipublic or private even

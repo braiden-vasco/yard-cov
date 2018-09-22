@@ -1,9 +1,0 @@
-#!/usr/bin/env ruby -U
-# frozen_string_literal: true
-
-$LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
-
-require 'yardstick'
-require 'yardstick/cli'
-
-Yardstick::CLI.run(*ARGV)
