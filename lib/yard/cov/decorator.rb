@@ -1,4 +1,4 @@
-module Yardstick
+module YARD::Cov
   # A string decorator for applying unix console codes
   class Decorator
     include Adamantium, Concord.new(:color, :mode)

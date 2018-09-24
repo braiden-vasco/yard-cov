@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Config, '#verbose?' do
+describe YARD::Cov::Config, '#verbose?' do
   subject { described_class.new(config).verbose? }
 
   context 'when set to true' do

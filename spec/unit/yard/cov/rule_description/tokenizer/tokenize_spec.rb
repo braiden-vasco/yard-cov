@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Yardstick
+module YARD::Cov
   class RuleDescription
     describe Tokenizer, '#tokenize' do
       subject { instance.tokenize }

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Config, '#for_rule' do
+describe YARD::Cov::Config, '#for_rule' do
   subject { described_class.new(options).for_rule(rule_class) }
 
   let(:options) do
@@ -10,10 +10,10 @@ describe Yardstick::Config, '#for_rule' do
   let(:rule_config) { double('RuleConfig') }
 
   context 'when rule is present' do
-    let(:rule_class) { Yardstick::Rules::Summary::Presence }
+    let(:rule_class) { YARD::Cov::Rules::Summary::Presence }
 
     before do
-      allow(Yardstick::RuleConfig).to receive(:new).with(enabled: false)
+      allow(YARD::Cov::RuleConfig).to receive(:new).with(enabled: false)
         .and_return(rule_config)
     end
 
@@ -21,10 +21,10 @@ describe Yardstick::Config, '#for_rule' do
   end
 
   context 'when config does not have given rule' do
-    let(:rule_class) { Yardstick::Rules::Summary::Length }
+    let(:rule_class) { YARD::Cov::Rules::Summary::Length }
 
     before do
-      allow(Yardstick::RuleConfig).to receive(:new).with({})
+      allow(YARD::Cov::RuleConfig).to receive(:new).with({})
         .and_return(rule_config)
     end
 
@@ -35,7 +35,7 @@ describe Yardstick::Config, '#for_rule' do
     let(:rule_class) { Object }
 
     it 'raises InvalidRule error' do
-      msg = 'every rule must begin with Yardstick::Rules::'
+      msg = 'every rule must begin with YARD::Cov::Rules::'
 
       expect { subject }
         .to raise_error(described_class::InvalidRule, msg)

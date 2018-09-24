@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Config, '.coerce' do
+describe YARD::Cov::Config, '.coerce' do
   let(:hash) { { 'rules' => { 'foo' => 'bar' } } }
 
   context 'when without block' do

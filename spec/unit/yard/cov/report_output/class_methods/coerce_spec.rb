@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::ReportOutput, '.coerce' do
+describe YARD::Cov::ReportOutput, '.coerce' do
   subject { described_class.coerce(target) }
 
   let(:target) { '/foo/bar.rb' }

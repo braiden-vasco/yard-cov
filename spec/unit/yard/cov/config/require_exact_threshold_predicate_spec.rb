@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Config, '#require_exact_threshold?' do
+describe YARD::Cov::Config, '#require_exact_threshold?' do
   subject { described_class.new(config).require_exact_threshold? }
 
   context 'when set to true' do

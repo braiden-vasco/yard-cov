@@ -2,18 +2,18 @@ require 'spec_helper'
 
 require 'yard/cov/rake/verify'
 
-describe Yardstick::Rake::Verify, '#verify_measurements' do
+describe YARD::Cov::Rake::Verify, '#verify_measurements' do
   subject(:measure) do
     capture_stdout { described_class.new(:verify, options).verify_measurements }
   end
 
-  let(:config)  { Yardstick::Config.new(threshold: 90) }
+  let(:config)  { YARD::Cov::Config.new(threshold: 90) }
   let(:options) { double('options')                    }
 
   before do
-    allow(Yardstick::Config)
+    allow(YARD::Cov::Config)
       .to receive(:coerce).with(options).and_return(config)
-    allow(Yardstick)
+    allow(YARD::Cov)
       .to receive(:measure).with(config).and_return(measurements)
   end
 

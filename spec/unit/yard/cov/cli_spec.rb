@@ -19,7 +19,7 @@ end
 shared_examples_for 'displays version' do
   it 'displays the program and version' do
     expect(@output)
-      .to eql("#{OptionParser.new.program_name} #{Yardstick::VERSION}\n")
+      .to eql("#{OptionParser.new.program_name} #{YARD::Cov::VERSION}\n")
   end
 end
 
@@ -30,7 +30,7 @@ shared_examples_for 'displays coverage summary' do
   end
 end
 
-describe Yardstick::CLI do
+describe YARD::Cov::CLI do
   def capture_display(&block)
     capture_stdout do
       expect(block).to raise_error(SystemExit)
@@ -68,7 +68,7 @@ describe Yardstick::CLI do
 
     describe 'with a String path' do
       before :all do
-        @measurements = capture_stdout { described_class.run(Yardstick::ROOT.join('lib', 'yard', 'cov.rb').to_s) }
+        @measurements = capture_stdout { described_class.run(YARD::Cov::ROOT.join('lib', 'yard', 'cov.rb').to_s) }
       end
 
       it_should_behave_like 'measured itself'
@@ -77,7 +77,7 @@ describe Yardstick::CLI do
 
     describe 'with a Pathname' do
       before :all do
-        @measurements = capture_stdout { described_class.run(Yardstick::ROOT.join('lib', 'yard', 'cov.rb')) }
+        @measurements = capture_stdout { described_class.run(YARD::Cov::ROOT.join('lib', 'yard', 'cov.rb')) }
       end
 
       it_should_behave_like 'measured itself'
@@ -86,7 +86,7 @@ describe Yardstick::CLI do
 
     describe 'with an Array of String objects' do
       before :all do
-        @measurements = capture_stdout { described_class.run(*[Yardstick::ROOT.join('lib', 'yard', 'cov.rb').to_s]) }
+        @measurements = capture_stdout { described_class.run(*[YARD::Cov::ROOT.join('lib', 'yard', 'cov.rb').to_s]) }
       end
 
       it_should_behave_like 'measured itself'
@@ -95,7 +95,7 @@ describe Yardstick::CLI do
 
     describe 'with an Array of Pathname objects' do
       before :all do
-        @measurements = capture_stdout { described_class.run(*[Yardstick::ROOT.join('lib', 'yard', 'cov.rb')]) }
+        @measurements = capture_stdout { described_class.run(*[YARD::Cov::ROOT.join('lib', 'yard', 'cov.rb')]) }
       end
 
       it_should_behave_like 'measured itself'

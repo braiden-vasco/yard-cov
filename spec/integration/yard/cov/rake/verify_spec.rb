@@ -2,7 +2,7 @@ require 'spec_helper'
 
 require 'yard/cov/rake/verify'
 
-describe Yardstick::Rake::Verify do
+describe YARD::Cov::Rake::Verify do
   before do
     described_class.new do |verify|
       verify.threshold = 100

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Yardstick::Parser do
+RSpec.describe YARD::Cov::Parser do
   describe '.parse_paths' do
     subject(:document_set) { described_class.parse_paths(paths) }
 
@@ -14,14 +14,14 @@ RSpec.describe Yardstick::Parser do
       allow(YARD::Registry).to receive(:all).with(:method).and_return([method_object])
     end
 
-    it { should be_a(Yardstick::DocumentSet) }
+    it { should be_a(YARD::Cov::DocumentSet) }
 
     its(:length) { should be(1) }
 
     context 'first document' do
       subject { document_set.first }
 
-      it { should be_a(Yardstick::Document) }
+      it { should be_a(YARD::Cov::Document) }
 
       its(:docstring) { should eql(docstring) }
     end
@@ -43,7 +43,7 @@ RSpec.describe Yardstick::Parser do
         .to receive(:all).with(:method).and_return(method_objects)
     end
 
-    it { should be_a(Yardstick::DocumentSet) }
+    it { should be_a(YARD::Cov::DocumentSet) }
 
     its(:length) { should be(3) }
 
@@ -55,7 +55,7 @@ RSpec.describe Yardstick::Parser do
     context 'first document' do
       subject { document_set.first }
 
-      it { should be_a(Yardstick::Document) }
+      it { should be_a(YARD::Cov::Document) }
 
       its(:docstring) { should eql('barL2') }
     end
@@ -70,7 +70,7 @@ RSpec.describe Yardstick::Parser do
         ]
       end
 
-      it { should be_a(Yardstick::DocumentSet) }
+      it { should be_a(YARD::Cov::DocumentSet) }
       its(:length) { should be(1) }
     end
   end

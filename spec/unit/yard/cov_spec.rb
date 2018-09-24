@@ -1,15 +1,15 @@
 require 'spec_helper'
 
-RSpec.describe Yardstick do
+RSpec.describe YARD::Cov do
   describe '.measure' do
     context 'when no arguments' do
       subject { described_class.measure }
 
       it 'delegates to Processor' do
         processor = double('processor')
-        config = instance_of(Yardstick::Config)
+        config = instance_of(YARD::Cov::Config)
 
-        allow(Yardstick::Processor)
+        allow(YARD::Cov::Processor)
           .to receive(:new).with(config).and_return(processor)
         expect(processor).to receive(:process)
         subject
@@ -23,7 +23,7 @@ RSpec.describe Yardstick do
 
       it 'delegates to Processor' do
         processor = double('processor')
-        allow(Yardstick::Processor)
+        allow(YARD::Cov::Processor)
           .to receive(:new).with(config).and_return(processor)
         expect(processor).to receive(:process)
         subject
@@ -39,8 +39,8 @@ RSpec.describe Yardstick do
 
       it 'delegates to Processor' do
         processor = double('processor')
-        config = instance_of(Yardstick::Config)
-        allow(Yardstick::Processor)
+        config = instance_of(YARD::Cov::Config)
+        allow(YARD::Cov::Processor)
           .to receive(:new).with(config).and_return(processor)
         expect(processor).to receive(:process_string).with(string)
         subject
@@ -54,7 +54,7 @@ RSpec.describe Yardstick do
 
       it 'delegates to Processor' do
         processor = double('processor')
-        allow(Yardstick::Processor)
+        allow(YARD::Cov::Processor)
           .to receive(:new).with(config).and_return(processor)
         expect(processor).to receive(:process_string).with(string)
         subject

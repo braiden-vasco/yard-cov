@@ -3,7 +3,7 @@ require 'rake/tasklib'
 
 require 'yard/cov'
 
-module Yardstick
+module YARD::Cov
   module Rake
     # A rake task for verifying the doc thresholds
     class Verify < ::Rake::TaskLib
@@ -12,7 +12,7 @@ module Yardstick
       # Initialize a Verify task
       #
       # @example
-      #   task = Yardstick::Rake::Verify.new do |task|
+      #   task = YARD::Cov::Rake::Verify.new do |task|
       #     task.threshold = 100
       #   end
       #
@@ -21,10 +21,10 @@ module Yardstick
       # @param [Symbol] name
       #   optional task name
       #
-      # @yieldparam [Yardstick::Config] config
+      # @yieldparam [YARD::Cov::Config] config
       #   the config object
       #
-      # @return [Yardstick::Rake::Verify] task
+      # @return [YARD::Cov::Rake::Verify] task
       #   the verification task instance
       #
       # @api public
@@ -65,8 +65,8 @@ module Yardstick
       #
       # @api private
       def total_coverage
-        measurements = Yardstick.measure(config)
-        Yardstick.round_percentage(measurements.coverage * 100)
+        measurements = YARD::Cov.measure(config)
+        YARD::Cov.round_percentage(measurements.coverage * 100)
       end
 
       private

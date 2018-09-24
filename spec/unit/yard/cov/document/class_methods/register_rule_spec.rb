@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Document, '.register_rule' do
+describe YARD::Cov::Document, '.register_rule' do
   subject { described_class.register_rule(rule_class) }
 
   let(:rule_class)   { Class.new                        }

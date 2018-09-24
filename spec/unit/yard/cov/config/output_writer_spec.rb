@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Config, '#output=' do
+describe YARD::Cov::Config, '#output=' do
   subject { config.output = output }
 
   let(:config) { described_class.new }
@@ -11,7 +11,7 @@ describe Yardstick::Config, '#output=' do
   context 'output' do
     subject { config.output }
 
-    it { should be_a(Yardstick::ReportOutput) }
+    it { should be_a(YARD::Cov::ReportOutput) }
 
     its(:to_s) { should eql('tmp/*.rb') }
   end

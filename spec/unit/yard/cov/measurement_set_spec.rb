@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Yardstick::MeasurementSet do
+RSpec.describe YARD::Cov::MeasurementSet do
   describe '#coverage' do
     subject { set.coverage }
 

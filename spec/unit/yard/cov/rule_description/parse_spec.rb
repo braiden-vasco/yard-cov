@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Yardstick
+module YARD::Cov
   describe RuleDescription, '.parse' do
     subject { described_class.parse(description) }
 

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::RuleConfig, '#enabled_for_path?' do
+describe YARD::Cov::RuleConfig, '#enabled_for_path?' do
   subject { instance.enabled_for_path?(path) }
 
   %w[Foo::Bar#baz Foo::Bar.baz].each do |method|

@@ -1,6 +1,6 @@
 shared_examples_for 'measured itself' do
   it 'returns a MeasurementSet' do
-    expect(@measurements).to be_kind_of(Yardstick::MeasurementSet)
+    expect(@measurements).to be_kind_of(YARD::Cov::MeasurementSet)
   end
 
   it 'is non-empty' do

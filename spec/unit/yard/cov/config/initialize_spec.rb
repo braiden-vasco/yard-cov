@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Config, '#initialize' do
+describe YARD::Cov::Config, '#initialize' do
   it { should be_instance_of(described_class) }
 
   context 'when given custom options' do

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Config, '#threshold=' do
+describe YARD::Cov::Config, '#threshold=' do
   subject { described_class.new }
 
   let(:new_threshold) { 34 }

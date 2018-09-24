@@ -1,9 +1,9 @@
-module Yardstick
+module YARD::Cov
   # A set of documents
   class DocumentSet < OrderedSet
     # Measure documents using given config
     #
-    # @return [Yardstick::MeasurementSet]
+    # @return [YARD::Cov::MeasurementSet]
     #   a collection of measurements
     #
     # @api private

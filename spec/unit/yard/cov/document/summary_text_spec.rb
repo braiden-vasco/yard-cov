@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Document, '#summary_text' do
+describe YARD::Cov::Document, '#summary_text' do
   subject { described_class.new(docstring).summary_text }
 
   context 'when with summary' do

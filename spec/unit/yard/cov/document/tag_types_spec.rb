@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Document, '#tag_types' do
+describe YARD::Cov::Document, '#tag_types' do
   subject { described_class.new(docstring).tag_types(name) }
 
   let(:name)      { 'tag name'           }

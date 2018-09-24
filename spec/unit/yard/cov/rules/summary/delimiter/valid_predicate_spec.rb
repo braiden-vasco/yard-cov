@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Rules::Summary::Delimiter, '#valid?' do
+describe YARD::Cov::Rules::Summary::Delimiter, '#valid?' do
   subject { described_class.new(document).valid? }
 
   let(:document) { double('document', summary_text: text) }

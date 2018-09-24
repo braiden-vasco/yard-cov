@@ -1,4 +1,4 @@
-module Yardstick
+module YARD::Cov
   # Rule description composed of tokens which can be formatted
   class RuleDescription
     # @abstract string token

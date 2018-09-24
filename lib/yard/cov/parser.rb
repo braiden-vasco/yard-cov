@@ -1,4 +1,4 @@
-module Yardstick
+module YARD::Cov
   # Parses files and strings using YARD
   class Parser
     # Measure files specified in the paths
@@ -28,7 +28,7 @@ module Yardstick
 
     # Coerces method objects into documents
     #
-    # @return [Yardstick::DocumentSet]
+    # @return [YARD::Cov::DocumentSet]
     #
     # @api private
     def self.documents

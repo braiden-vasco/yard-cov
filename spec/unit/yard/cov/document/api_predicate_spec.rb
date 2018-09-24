@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Document, '#api?' do
+describe YARD::Cov::Document, '#api?' do
   subject { described_class.new(docstring).api?(types) }
 
   let(:docstring) { double('docstring') }

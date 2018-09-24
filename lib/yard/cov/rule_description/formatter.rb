@@ -1,4 +1,4 @@
-module Yardstick
+module YARD::Cov
   class RuleDescription
     # Rule description text formatter
     class Formatter

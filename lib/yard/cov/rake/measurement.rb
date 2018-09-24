@@ -5,7 +5,7 @@ require 'pathname'
 
 require 'yard/cov'
 
-module Yardstick
+module YARD::Cov
   module Rake
     # A rake task for measuring docs in a set of files
     class Measurement < ::Rake::TaskLib
@@ -14,15 +14,15 @@ module Yardstick
       # Initializes a Measurement task
       #
       # @example
-      #   task = Yardstick::Rake::Measurement
+      #   task = YARD::Cov::Rake::Measurement
       #
       # @param [Symbol] name
       #   optional task name
       #
-      # @yieldparam [Yardstick::Config] config
+      # @yieldparam [YARD::Cov::Config] config
       #   the config object
       #
-      # @return [Yardstick::Rake::Measurement]
+      # @return [YARD::Cov::Rake::Measurement]
       #   the measurement task
       #
       # @api public
@@ -41,7 +41,7 @@ module Yardstick
       #
       # @api public
       def yardcov_measure
-        config.output.write { |io| Yardstick.measure(config).puts(io) }
+        config.output.write { |io| YARD::Cov.measure(config).puts(io) }
       end
 
       private

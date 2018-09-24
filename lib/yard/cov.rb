@@ -41,19 +41,19 @@ require 'yard/cov/yard_ext'
 require 'yard/cov/version'
 
 # Measure YARD documentation coverage
-module Yardstick
+module YARD::Cov
   ROOT = Pathname(__FILE__).dirname.parent.expand_path.freeze
 
   # Measure a list of files
   #
   # @example
-  #   config = Yardstick::Config.coerce(path: 'article.rb')
-  #   Yardstick.measure(config)  # => [ MeasurementSet ]
+  #   config = YARD::Cov::Config.coerce(path: 'article.rb')
+  #   YARD::Cov.measure(config)  # => [ MeasurementSet ]
   #
   # @param [Config] config
   #   optional configuration
   #
-  # @return [Yardstick::MeasurementSet]
+  # @return [YARD::Cov::MeasurementSet]
   #   the measurements for each file
   #
   # @api public
@@ -66,14 +66,14 @@ module Yardstick
   # @example
   #   string = "def my_method; end"
   #
-  #   Yardstick.measure_string(string)  # => [ Measurement ]
+  #   YARD::Cov.measure_string(string)  # => [ Measurement ]
   #
   # @param [#to_str] string
   #   the string to measure
   # @param [Config] config
   #   optional configuration
   #
-  # @return [Yardstick::MeasurementSet]
+  # @return [YARD::Cov::MeasurementSet]
   #   the measurements for the string
   #
   # @api public

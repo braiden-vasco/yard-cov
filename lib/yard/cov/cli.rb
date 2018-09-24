@@ -1,22 +1,22 @@
 require 'optparse'
 
-module Yardstick
+module YARD::Cov
   # Handle the command line interface
   class CLI
     # Parse the command line options, and run the command
     #
     # @example
-    #   Yardstick::CLI.run(%w[ article.rb ])  # => [ Measurement ]
+    #   YARD::Cov::CLI.run(%w[ article.rb ])  # => [ Measurement ]
     #
     # @param [Array] args
     #   arguments passed in from the command line
     #
-    # @return [Yardstick::MeasurementSet]
+    # @return [YARD::Cov::MeasurementSet]
     #   the measurement for each file
     #
     # @api public
     def self.run(*args)
-      measurements = Yardstick.measure(parse_config(args))
+      measurements = YARD::Cov.measure(parse_config(args))
       measurements.puts
       measurements
     end
@@ -40,7 +40,7 @@ module Yardstick
 
     # Return an OptionParser instance for the command-line app
     #
-    # @return [Yardstick::OptionParser]
+    # @return [YARD::Cov::OptionParser]
     #   the option parser instance
     #
     # @api private

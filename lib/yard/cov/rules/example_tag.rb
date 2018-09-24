@@ -1,4 +1,4 @@
-module Yardstick
+module YARD::Cov
   module Rules
     # Checks if method has @example tag
     #

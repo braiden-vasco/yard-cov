@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Measurement, '#ok?' do
+describe YARD::Cov::Measurement, '#ok?' do
   subject { described_class.new(rule).ok? }
 
   let(:document) { DocumentMock.new }

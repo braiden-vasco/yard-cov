@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Yardstick::Processor do
+RSpec.describe YARD::Cov::Processor do
   describe '#process' do
     subject { described_class.new(config).process }
 
@@ -9,7 +9,7 @@ RSpec.describe Yardstick::Processor do
     let(:documents) { double('document set')       }
 
     it 'measures files specified in the config' do
-      expect(Yardstick::Parser)
+      expect(YARD::Cov::Parser)
         .to receive(:parse_paths).with(['foo/bar.rb']).and_return(documents)
       expect(documents).to receive(:measure).with(config)
       subject
@@ -24,7 +24,7 @@ RSpec.describe Yardstick::Processor do
     let(:documents) { double('document set') }
 
     it 'measures specified string' do
-      expect(Yardstick::Parser)
+      expect(YARD::Cov::Parser)
         .to receive(:parse_string).with(string).and_return(documents)
       expect(documents).to receive(:measure).with(config)
       subject

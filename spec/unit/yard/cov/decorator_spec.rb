@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Yardstick::Decorator do
+RSpec.describe YARD::Cov::Decorator do
   describe '::NONE' do
     subject { formatter.decorate(string) }
 

@@ -1,4 +1,4 @@
-module Yardstick
+module YARD::Cov
   # Wraps a yard docstring to make a nicer interface
   class Document
     @registered_rules = Set.new
@@ -15,7 +15,7 @@ module Yardstick
     # Register rule with document
     #
     # @param [Class] rule_class
-    #   subclass of Yardstick::Rule
+    #   subclass of YARD::Cov::Rule
     #
     # @return [undefined]
     #
@@ -28,7 +28,7 @@ module Yardstick
     #
     # @param [Yardstring::Document] document
     #   document that will be measured
-    # @param [Yardstick::Config] config
+    # @param [YARD::Cov::Config] config
     #   a configuration
     #
     # @return [MeasurementSet]

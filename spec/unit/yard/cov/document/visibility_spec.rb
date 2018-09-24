@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Document, '#visibility' do
+describe YARD::Cov::Document, '#visibility' do
   subject { described_class.new(docstring).visibility }
 
   let(:docstring) { double('docstring', object: object)      }

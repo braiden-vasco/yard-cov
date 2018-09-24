@@ -2,7 +2,7 @@ require 'spec_helper'
 
 require 'yard/cov/rake/measurement'
 
-describe Yardstick::Rake::Measurement do
+describe YARD::Cov::Rake::Measurement do
   let(:file)   { Tempfile.new('report.txt') }
   let(:output) { Pathname(file.path)        }
 

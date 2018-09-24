@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Yardstick::OrderedSet do
+RSpec.describe YARD::Cov::OrderedSet do
   describe '#each' do
     subject { set.each { |*args| yielded << args } }
 

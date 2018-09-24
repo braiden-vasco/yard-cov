@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe Yardstick::Document, '#file' do
+describe YARD::Cov::Document, '#file' do
   subject { described_class.new(docstring).file }
 
   let(:docstring) { YARD::Registry.all(:method).first.docstring }
-  let(:file)      { Yardstick::ROOT.join('lib', 'yard', 'cov.rb') }
+  let(:file)      { YARD::Cov::ROOT.join('lib', 'yard', 'cov.rb') }
 
   before { YARD.parse([file.to_s], [], YARD::Logger::ERROR) }
 

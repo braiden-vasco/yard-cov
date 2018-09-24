@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Rules::ApiTag::Presence, '#valid?' do
+describe YARD::Cov::Rules::ApiTag::Presence, '#valid?' do
   subject { described_class.new(document).valid? }
 
   let(:document) { double('document') }

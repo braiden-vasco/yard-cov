@@ -1,4 +1,4 @@
-module Yardstick
+module YARD::Cov
   # A base class for an ordered set
   class OrderedSet
     include Concord.new(:entries, :index), Enumerable
@@ -8,7 +8,7 @@ module Yardstick
     # @param [Array] entries
     #   optional entries
     #
-    # @return [Yardstick::OrderedSet]
+    # @return [YARD::Cov::OrderedSet]
     #   the ordered set instance
     #
     # @api private
@@ -23,7 +23,7 @@ module Yardstick
     # @param [Object] entry
     #   the object to append
     #
-    # @return [Yardstick::OrderedSet]
+    # @return [YARD::Cov::OrderedSet]
     #   returns self
     #
     # @api private
@@ -40,7 +40,7 @@ module Yardstick
     # @param [#each] other
     #   the other ordered set
     #
-    # @return [Yardstick::OrderedSet]
+    # @return [YARD::Cov::OrderedSet]
     #   returns self
     #
     # @api private
@@ -57,7 +57,7 @@ module Yardstick
     # @yieldparam [Object] entry
     #   an entry in the ordered set
     #
-    # @return [Yardstick::OrderedSet]
+    # @return [YARD::Cov::OrderedSet]
     #   returns self
     #
     # @api private

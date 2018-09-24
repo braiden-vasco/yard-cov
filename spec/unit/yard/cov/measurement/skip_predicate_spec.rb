@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Measurement, '#skip?' do
+describe YARD::Cov::Measurement, '#skip?' do
   subject { described_class.new(rule).skip? }
 
   let(:document) { DocumentMock.new }

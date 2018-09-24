@@ -1,11 +1,11 @@
-module Yardstick
-  # Handles Yardstick configuration
+module YARD::Cov
+  # Handles YARD::Cov configuration
   #
   class Config
     # Error raised when an invalid rule is provided
     InvalidRule = Class.new(StandardError)
 
-    NAMESPACE_PREFIX = 'Yardstick::Rules::'.freeze
+    NAMESPACE_PREFIX = 'YARD::Cov::Rules::'.freeze
 
     # Set the threshold
     #
@@ -51,7 +51,7 @@ module Yardstick
 
     # The path to the file where the measurements will be written
     #
-    # @return [Yardstick::ReportOutput]
+    # @return [YARD::Cov::ReportOutput]
     #
     # @api private
     attr_reader :output
@@ -60,7 +60,7 @@ module Yardstick
     #
     # @param [Hash] hash
     #
-    # @yieldparam [Yardstick::Config] config
+    # @yieldparam [YARD::Cov::Config] config
     #   the config object
     #
     # @return [Config]
@@ -95,10 +95,10 @@ module Yardstick
     # @param [Hash] options
     #   optional configuration
     #
-    # @yieldparam [Yardstick::Config] config
+    # @yieldparam [YARD::Cov::Config] config
     #   the config object
     #
-    # @return [Yardstick::Config]
+    # @return [YARD::Cov::Config]
     #
     # @api private
     def initialize(options = {})

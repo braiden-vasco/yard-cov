@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe Yardstick, '.measure_string' do
+describe YARD::Cov, '.measure_string' do
   context 'with a string' do
     subject { described_class.measure_string("def foo;end\ndef bar;end") }
 
-    it { should be_a(Yardstick::MeasurementSet) }
+    it { should be_a(YARD::Cov::MeasurementSet) }
 
     it { should_not be_empty }
   end

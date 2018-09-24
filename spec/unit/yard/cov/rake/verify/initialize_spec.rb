@@ -2,15 +2,15 @@ require 'spec_helper'
 
 require 'yard/cov/rake/verify'
 
-describe Yardstick::Rake::Verify, '#initialize' do
+describe YARD::Cov::Rake::Verify, '#initialize' do
   context 'with custom arguments' do
     subject(:task) { described_class.new(:verify, options) }
 
-    let(:config)  { Yardstick::Config.new(threshold: 90) }
+    let(:config)  { YARD::Cov::Config.new(threshold: 90) }
     let(:options) { double('options')                    }
 
     before do
-      allow(Yardstick::Config)
+      allow(YARD::Cov::Config)
         .to receive(:coerce).with(options).and_return(config)
     end
 
@@ -76,7 +76,7 @@ describe Yardstick::Rake::Verify, '#initialize' do
 
     it 'yields to Config' do
       task
-      expect(@yield).to be_instance_of(Yardstick::Config)
+      expect(@yield).to be_instance_of(YARD::Cov::Config)
     end
   end
 end

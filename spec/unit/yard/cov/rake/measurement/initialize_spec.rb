@@ -2,15 +2,15 @@ require 'spec_helper'
 
 require 'yard/cov/rake/measurement'
 
-describe Yardstick::Rake::Measurement, '#initialize' do
+describe YARD::Cov::Rake::Measurement, '#initialize' do
   context 'with custom arguments' do
     subject(:task) { described_class.new(:measure, options) }
 
-    let(:config)  { Yardstick::Config.new }
+    let(:config)  { YARD::Cov::Config.new }
     let(:options) { double('options')     }
 
     before do
-      allow(Yardstick::Config)
+      allow(YARD::Cov::Config)
         .to receive(:coerce).with(options).and_return(config)
     end
 
@@ -58,7 +58,7 @@ describe Yardstick::Rake::Measurement, '#initialize' do
 
     it 'yields to Config' do
       task
-      expect(@yield).to be_instance_of(Yardstick::Config)
+      expect(@yield).to be_instance_of(YARD::Cov::Config)
     end
   end
 end

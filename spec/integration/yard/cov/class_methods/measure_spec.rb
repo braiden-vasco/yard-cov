@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick, '.measure' do
+describe YARD::Cov, '.measure' do
   describe 'with no arguments' do
     before :all do
       @measurements = described_class.measure
@@ -11,7 +11,7 @@ describe Yardstick, '.measure' do
 
   describe 'with a config' do
     before :all do
-      config = Yardstick::Config.new(path: Yardstick::ROOT.join('lib', 'yard', 'cov.rb'))
+      config = YARD::Cov::Config.new(path: YARD::Cov::ROOT.join('lib', 'yard', 'cov.rb'))
       @measurements = described_class.measure(config)
     end
 

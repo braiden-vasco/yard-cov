@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Document, '#path' do
+describe YARD::Cov::Document, '#path' do
   subject { described_class.new(docstring).path }
 
   let(:docstring) { YARD::Registry.all(:method).first.docstring }

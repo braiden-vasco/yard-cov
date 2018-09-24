@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Rules::ExampleTag, '#validatable?' do
+describe YARD::Cov::Rules::ExampleTag, '#validatable?' do
   subject { described_class.new(document).validatable? }
 
   let(:document) { double('document') }

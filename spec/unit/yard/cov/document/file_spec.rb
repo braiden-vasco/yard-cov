@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Document, '#file' do
+describe YARD::Cov::Document, '#file' do
   subject { described_class.new(docstring).file }
 
   let(:docstring) { double('docstring', object: object)   }

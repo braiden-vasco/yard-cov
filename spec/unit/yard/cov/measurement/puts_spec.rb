@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Measurement, '#puts' do
+describe YARD::Cov::Measurement, '#puts' do
   let(:document) { DocumentMock.new }
 
   describe 'with no arguments' do

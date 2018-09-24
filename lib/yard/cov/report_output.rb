@@ -1,4 +1,4 @@
-module Yardstick
+module YARD::Cov
   # Handles writing reports
   class ReportOutput
     include Concord.new(:target)
@@ -8,7 +8,7 @@ module Yardstick
     # @param [String, Pathname] target
     #   path of the output
     #
-    # @return [Yardstick::ReportOutput]
+    # @return [YARD::Cov::ReportOutput]
     #
     # @api private
     def self.coerce(target)

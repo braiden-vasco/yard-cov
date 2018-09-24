@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Document, '#tag_text' do
+describe YARD::Cov::Document, '#tag_text' do
   subject { described_class.new(docstring).tag_text(name) }
 
   let(:name)      { 'api'                   }

@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-RSpec.describe Yardstick::RuleDescription::Formatter::Null, '#format' do
+RSpec.describe YARD::Cov::RuleDescription::Formatter::Null, '#format' do
   subject { described_class.new(description).format }
 
   let(:description) do
-    Yardstick::RuleDescription.new([
-      Yardstick::RuleDescription::Token::Subject.new('important'),
-      Yardstick::RuleDescription::Token::Text.new(' recommended '),
-      Yardstick::RuleDescription::Token::Option.new('value'),
+    YARD::Cov::RuleDescription.new([
+      YARD::Cov::RuleDescription::Token::Subject.new('important'),
+      YARD::Cov::RuleDescription::Token::Text.new(' recommended '),
+      YARD::Cov::RuleDescription::Token::Option.new('value'),
     ])
   end
 

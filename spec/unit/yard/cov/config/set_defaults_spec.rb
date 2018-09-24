@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Yardstick::Config, '#set_defaults' do
+describe YARD::Cov::Config, '#set_defaults' do
   subject { described_class.new(options) }
 
   context 'when without options' do

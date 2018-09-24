@@ -1,4 +1,4 @@
-module Yardstick
+module YARD::Cov
   # Config class for rules
   #
   # It is used to check if document should be validated or not.
@@ -13,7 +13,7 @@ module Yardstick
     # @param [Hash] options
     #   optional configuration
     #
-    # @return [Yardstick::RuleConfig]
+    # @return [YARD::Cov::RuleConfig]
     #
     # @api private
     def initialize(options = {})

@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-RSpec.describe Yardstick::Rule do
+RSpec.describe YARD::Cov::Rule do
   describe '.coerce' do
     subject { described_class.coerce(document, config) }
 
     let(:document)    { DocumentMock.new                          }
     let(:config)      { double('config')                          }
-    let(:rule_config) { Yardstick::RuleConfig.new(enabled: false) }
+    let(:rule_config) { YARD::Cov::RuleConfig.new(enabled: false) }
 
     before do
       allow(config)
@@ -28,21 +28,21 @@ RSpec.describe Yardstick::Rule do
     end
 
     after do
-      Yardstick::Document.registered_rules.delete(subclass)
+      YARD::Cov::Document.registered_rules.delete(subclass)
     end
 
-    it { should be_a(Yardstick::RuleDescription) }
+    it { should be_a(YARD::Cov::RuleDescription) }
   end
 
   describe '.inherited' do
     let(:subclass) { Class.new(described_class) }
 
     after do
-      Yardstick::Document.registered_rules.delete(subclass)
+      YARD::Cov::Document.registered_rules.delete(subclass)
     end
 
     it 'registers rule' do
-      expect(Yardstick::Document.registered_rules).to include(subclass)
+      expect(YARD::Cov::Document.registered_rules).to include(subclass)
     end
   end
 
@@ -75,7 +75,7 @@ RSpec.describe Yardstick::Rule do
     context 'when rule config is given' do
       subject { described_class.new(document, config) }
 
-      let(:config) { Yardstick::RuleConfig.new(enabled: false) }
+      let(:config) { YARD::Cov::RuleConfig.new(enabled: false) }
 
       it { should be_a(described_class) }
 

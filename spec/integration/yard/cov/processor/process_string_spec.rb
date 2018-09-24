@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe Yardstick::Document, '#process_string' do
+describe YARD::Cov::Document, '#process_string' do
   subject(:measurements) { processor.process_string(method) }
 
-  let(:processor) { Yardstick::Processor.new(config) }
-  let(:config)    { Yardstick::Config.new            }
+  let(:processor) { YARD::Cov::Processor.new(config) }
+  let(:config)    { YARD::Cov::Config.new            }
 
   let(:valid_method) do
     (<<-RUBY)
@@ -26,7 +26,7 @@ describe Yardstick::Document, '#process_string' do
   end
 
   def measurement(markup)
-    description = Yardstick::RuleDescription.parse(markup)
+    description = YARD::Cov::RuleDescription.parse(markup)
 
     measurements.detect do |measurement|
       measurement.description.eql?(description)
@@ -36,7 +36,7 @@ describe Yardstick::Document, '#process_string' do
   describe 'with a method summary' do
     let(:method) { valid_method }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*method summary* should be specified')).to be_ok
@@ -46,7 +46,7 @@ describe Yardstick::Document, '#process_string' do
   describe 'without a method summary' do
     let(:method) { 'def test(value); end' }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has an incorrect measurement' do
       expect(measurement('*method summary* should be specified')).to_not be_ok
@@ -55,13 +55,13 @@ describe Yardstick::Document, '#process_string' do
 
   describe 'without a method summary when validations are turned off' do
     let(:config) do
-      Yardstick::Config.new(rules: {
+      YARD::Cov::Config.new(rules: {
                               'Summary::Presence'.to_sym => { enabled: false }
                             })
     end
     let(:method) { 'def test(value); end' }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*method summary* should be specified')).to be_ok
@@ -70,13 +70,13 @@ describe Yardstick::Document, '#process_string' do
 
   describe 'without a method summary when validations are turned off for given class' do
     let(:config) do
-      Yardstick::Config.new(rules: {
+      YARD::Cov::Config.new(rules: {
                               'Summary::Presence'.to_sym => { enabled: true, exclude: %w[World] }
                             })
     end
     let(:method) { 'class World; def test(value); end; end' }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*method summary* should be specified')).to be_ok
@@ -86,7 +86,7 @@ describe Yardstick::Document, '#process_string' do
   describe 'with a method summary that is 79 characters in length' do
     let(:method) { valid_method }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*method summary* should be less than or equal to 79 characters in length'))
@@ -103,7 +103,7 @@ describe Yardstick::Document, '#process_string' do
       RUBY
     end
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has an incorrect measurement' do
       expect(measurement('*method summary* should be less than or equal to 79 characters in length'))
@@ -114,7 +114,7 @@ describe Yardstick::Document, '#process_string' do
   describe 'with a method summary that does not end in a period' do
     let(:method) { valid_method }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*method summary* should not end in a period'))
@@ -131,7 +131,7 @@ describe Yardstick::Document, '#process_string' do
       RUBY
     end
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has an incorrect measurement' do
       expect(measurement('*method summary* should not end in a period'))
@@ -142,7 +142,7 @@ describe Yardstick::Document, '#process_string' do
   describe 'with a method summary that is on one line' do
     let(:method) { valid_method }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*method summary* should be a single line'))
@@ -160,7 +160,7 @@ describe Yardstick::Document, '#process_string' do
       RUBY
     end
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has an incorrect measurement' do
       expect(measurement('*method summary* should be a single line'))
@@ -171,7 +171,7 @@ describe Yardstick::Document, '#process_string' do
   describe 'with a method that has an @example tag' do
     let(:method) { valid_method }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*@example* should be specified for _public_ and _semipublic_ methods'))
@@ -188,7 +188,7 @@ describe Yardstick::Document, '#process_string' do
       RUBY
     end
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'is skipped' do
       expect(measurement('*@example* should be specified for _public_ and _semipublic_ methods'))
@@ -207,7 +207,7 @@ describe Yardstick::Document, '#process_string' do
       RUBY
     end
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'is skipped' do
       expect(measurement('*@example* should be specified for _public_ and _semipublic_ methods'))
@@ -218,7 +218,7 @@ describe Yardstick::Document, '#process_string' do
   describe 'with a method that has an @api tag' do
     let(:method) { valid_method }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*@api* should be specified'))
@@ -229,7 +229,7 @@ describe Yardstick::Document, '#process_string' do
   describe 'with a method that does not have an @api tag' do
     let(:method) { 'def test(value); end' }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has an incorrect measurement' do
       expect(measurement('*@api* should be specified'))
@@ -240,7 +240,7 @@ describe Yardstick::Document, '#process_string' do
   describe 'with a method that has a public @api tag' do
     let(:method) { valid_method }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*@api* should be _public_, _semipublic_, or _private_'))
@@ -257,7 +257,7 @@ describe Yardstick::Document, '#process_string' do
       RUBY
     end
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has an incorrect measurement' do
       expect(measurement('*@api* should be _public_, _semipublic_, or _private_'))
@@ -276,7 +276,7 @@ describe Yardstick::Document, '#process_string' do
       RUBY
     end
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*@api* should be _semipublic_ or _private_ for protected methods'))
@@ -295,7 +295,7 @@ describe Yardstick::Document, '#process_string' do
       RUBY
     end
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*@api* should be _semipublic_ or _private_ for protected methods'))
@@ -314,7 +314,7 @@ describe Yardstick::Document, '#process_string' do
       RUBY
     end
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has an incorrect measurement' do
       expect(measurement('*@api* should be _semipublic_ or _private_ for protected methods'))
@@ -333,7 +333,7 @@ describe Yardstick::Document, '#process_string' do
       RUBY
     end
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*@api* should be _private_ for private methods'))
@@ -352,7 +352,7 @@ describe Yardstick::Document, '#process_string' do
       RUBY
     end
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has an incorrect measurement' do
       expect(measurement('*@api* should be _private_ for private methods'))
@@ -371,7 +371,7 @@ describe Yardstick::Document, '#process_string' do
       RUBY
     end
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has an incorrect measurement' do
       expect(measurement('*@api* should be _private_ for private methods'))
@@ -382,7 +382,7 @@ describe Yardstick::Document, '#process_string' do
   describe 'with a method that has a @return tag' do
     let(:method) { valid_method }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has a correct measurement' do
       expect(measurement('*@return* should be specified')).to be_ok
@@ -392,7 +392,7 @@ describe Yardstick::Document, '#process_string' do
   describe 'with a method that does not have a @return tag' do
     let(:method) { 'def test(value); end' }
 
-    it { should be_kind_of(Yardstick::MeasurementSet) }
+    it { should be_kind_of(YARD::Cov::MeasurementSet) }
 
     it 'has an incorrect measurement' do
       expect(measurement('*@return* should be specified')).to_not be_ok

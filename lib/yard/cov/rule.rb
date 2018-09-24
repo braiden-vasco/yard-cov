@@ -1,6 +1,6 @@
 require 'forwardable'
 
-module Yardstick
+module YARD::Cov
   # Base class of every rule
   #
   # @abstract
@@ -46,12 +46,12 @@ module Yardstick
 
     # Makes a new instance of rule using given config
     #
-    # @param [Yardstick::Document] document
+    # @param [YARD::Cov::Document] document
     #   document that will be measured
-    # @param [Yardstick::Config] config
+    # @param [YARD::Cov::Config] config
     #   a configuration
     #
-    # @return [Yardstick::Rule]
+    # @return [YARD::Cov::Rule]
     #
     # @api private
     def self.coerce(document, config)
@@ -67,11 +67,11 @@ module Yardstick
 
     # Initializes a rule
     #
-    # @param [Yardstick::Document] document
-    # @param [Yardstick::RuleConfig] config
+    # @param [YARD::Cov::Document] document
+    # @param [YARD::Cov::RuleConfig] config
     #   rule configuration
     #
-    # @return [Yardstick::Rule]
+    # @return [YARD::Cov::Rule]
     #
     # @api private
     def initialize(document, config = RuleConfig.new)

@@ -1,4 +1,4 @@
-module Yardstick
+module YARD::Cov
   module Rules
     # Rules related to @api tag
     #

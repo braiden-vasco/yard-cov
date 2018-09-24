@@ -1,4 +1,4 @@
-module Yardstick
+module YARD::Cov
   # A measurement given a constraint on the docs
   class Measurement
     # Return a Measurement instance
@@ -6,10 +6,10 @@ module Yardstick
     # @example
     #   measurement = Measurement.new(document, rule)
     #
-    # @param [Yardstick::Document] document
-    # @param [Yardstick::Rule] rule
+    # @param [YARD::Cov::Document] document
+    # @param [YARD::Cov::Rule] rule
     #
-    # @return [Yardstick::Measurement]
+    # @return [YARD::Cov::Measurement]
     #   the measurement instance
     #
     # @api public
