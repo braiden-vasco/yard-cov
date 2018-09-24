@@ -1,5 +1,6 @@
 require 'spec_helper'
-require 'yardstick/rake/measurement'
+
+require 'yard/cov/rake/measurement'
 
 describe Yardstick::Rake::Measurement do
   let(:file)   { Tempfile.new('report.txt') }
@@ -7,7 +8,7 @@ describe Yardstick::Rake::Measurement do
 
   before do
     described_class.new do |config|
-      config.path   = 'lib/yardstick.rb'
+      config.path   = 'lib/yard/cov.rb'
       config.output = output.to_s
     end
   end

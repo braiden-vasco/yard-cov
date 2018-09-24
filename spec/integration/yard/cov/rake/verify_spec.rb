@@ -1,11 +1,12 @@
 require 'spec_helper'
-require 'yardstick/rake/verify'
+
+require 'yard/cov/rake/verify'
 
 describe Yardstick::Rake::Verify do
   before do
     described_class.new do |verify|
       verify.threshold = 100
-      verify.path = 'lib/yardstick.rb'
+      verify.path = 'lib/yard/cov.rb'
     end
   end
 

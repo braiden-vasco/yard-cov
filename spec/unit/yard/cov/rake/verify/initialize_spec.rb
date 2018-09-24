@@ -1,5 +1,6 @@
 require 'spec_helper'
-require 'yardstick/rake/verify'
+
+require 'yard/cov/rake/verify'
 
 describe Yardstick::Rake::Verify, '#initialize' do
   context 'with custom arguments' do

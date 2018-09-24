@@ -1,5 +1,6 @@
 require 'spec_helper'
-require 'yardstick/rake/measurement'
+
+require 'yard/cov/rake/measurement'
 
 describe Yardstick::Rake::Measurement, '#initialize' do
   context 'with custom arguments' do

@@ -1,7 +1,7 @@
 require 'rake'
 require 'rake/tasklib'
 
-require 'yardstick'
+require 'yard/cov'
 
 module Yardstick
   module Rake

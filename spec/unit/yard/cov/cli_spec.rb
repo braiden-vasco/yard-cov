@@ -1,5 +1,6 @@
 require 'spec_helper'
-require 'yardstick/cli'
+
+require 'yard/cov/cli'
 
 shared_examples_for 'displays help' do
   let(:message) do
@@ -67,7 +68,7 @@ describe Yardstick::CLI do
 
     describe 'with a String path' do
       before :all do
-        @measurements = capture_stdout { described_class.run(Yardstick::ROOT.join('lib', 'yardstick.rb').to_s) }
+        @measurements = capture_stdout { described_class.run(Yardstick::ROOT.join('lib', 'yard', 'cov.rb').to_s) }
       end
 
       it_should_behave_like 'measured itself'
@@ -76,7 +77,7 @@ describe Yardstick::CLI do
 
     describe 'with a Pathname' do
       before :all do
-        @measurements = capture_stdout { described_class.run(Yardstick::ROOT.join('lib', 'yardstick.rb')) }
+        @measurements = capture_stdout { described_class.run(Yardstick::ROOT.join('lib', 'yard', 'cov.rb')) }
       end
 
       it_should_behave_like 'measured itself'
@@ -85,7 +86,7 @@ describe Yardstick::CLI do
 
     describe 'with an Array of String objects' do
       before :all do
-        @measurements = capture_stdout { described_class.run(*[Yardstick::ROOT.join('lib', 'yardstick.rb').to_s]) }
+        @measurements = capture_stdout { described_class.run(*[Yardstick::ROOT.join('lib', 'yard', 'cov.rb').to_s]) }
       end
 
       it_should_behave_like 'measured itself'
@@ -94,7 +95,7 @@ describe Yardstick::CLI do
 
     describe 'with an Array of Pathname objects' do
       before :all do
-        @measurements = capture_stdout { described_class.run(*[Yardstick::ROOT.join('lib', 'yardstick.rb')]) }
+        @measurements = capture_stdout { described_class.run(*[Yardstick::ROOT.join('lib', 'yard', 'cov.rb')]) }
       end
 
       it_should_behave_like 'measured itself'
