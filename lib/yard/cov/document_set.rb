@@ -1,5 +1,5 @@
 module Yardstick
-  # A set of yardstick documents
+  # A set of documents
   class DocumentSet < OrderedSet
     # Measure documents using given config
     #

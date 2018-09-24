@@ -26,7 +26,7 @@ module Yardstick
       #   the measurement task
       #
       # @api public
-      def initialize(name = :yardstick_measure, options = {}, &block)
+      def initialize(name = :yardcov_measure, options = {}, &block)
         super(name, Config.coerce(options, &block))
 
         define
@@ -35,12 +35,12 @@ module Yardstick
       # Measure the documentation
       #
       # @example
-      #   task.yardstick_measure  # (output measurement report)
+      #   task.yardcov_measure  # (output measurement report)
       #
       # @return [undefined]
       #
       # @api public
-      def yardstick_measure
+      def yardcov_measure
         config.output.write { |io| Yardstick.measure(config).puts(io) }
       end
 
@@ -52,8 +52,8 @@ module Yardstick
       #
       # @api private
       def define
-        desc "Measure docs in #{config.path} with yardstick"
-        task(name) { yardstick_measure }
+        desc "Measure docs in #{config.path} with yard-cov"
+        task(name) { yardcov_measure }
       end
     end
   end

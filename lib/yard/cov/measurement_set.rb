@@ -1,5 +1,5 @@
 module Yardstick
-  # A set of yardstick measurements
+  # A set of measurements
   class MeasurementSet < OrderedSet
     # The total number of measurements
     #

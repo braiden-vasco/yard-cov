@@ -22,16 +22,16 @@ describe Yardstick::Rake::Measurement, '#initialize' do
         expect(Rake::Task['measure']).to be_kind_of(Rake::Task)
       end
 
-      it 'calls yardstick_measure when rake task is executed' do
+      it 'calls yardcov_measure when rake task is executed' do
         subject
-        expect(task).to receive(:yardstick_measure)
+        expect(task).to receive(:yardcov_measure)
         Rake::Task['measure'].execute
       end
 
       it 'includes the threshold in the task name' do
         task
         expect(Rake.application.last_description)
-          .to eql('Measure docs in lib/**/*.rb with yardstick')
+          .to eql('Measure docs in lib/**/*.rb with yard-cov')
       end
     end
   end
@@ -41,9 +41,9 @@ describe Yardstick::Rake::Measurement, '#initialize' do
 
     it { should be_a(described_class) }
 
-    it 'assigns yardstick_measure as the name' do
+    it 'assigns yardcov_measure as the name' do
       subject
-      expect(Rake::Task['yardstick_measure']).to be_kind_of(Rake::Task)
+      expect(Rake::Task['yardcov_measure']).to be_kind_of(Rake::Task)
     end
   end
 

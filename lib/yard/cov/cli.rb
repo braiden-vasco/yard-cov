@@ -1,7 +1,7 @@
 require 'optparse'
 
 module Yardstick
-  # Handle the yardstick command line interface
+  # Handle the command line interface
   class CLI
     # Parse the command line options, and run the command
     #

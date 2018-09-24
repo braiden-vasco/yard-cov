@@ -79,7 +79,7 @@ module Yardstick
       def define
         modifier = config.require_exact_threshold? ? 'exactly' : 'at least'
 
-        desc "Verify that yardstick coverage is #{modifier} #{threshold}%"
+        desc "Verify that yard-cov coverage is #{modifier} #{threshold}%"
         task(name) { verify_measurements }
       end
 

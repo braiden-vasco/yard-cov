@@ -2,8 +2,8 @@ require 'spec_helper'
 
 require 'yard/cov/rake/measurement'
 
-describe Yardstick::Rake::Measurement, '#yardstick_measure' do
-  subject { described_class.new(:yardstick_measure, options).yardstick_measure }
+describe Yardstick::Rake::Measurement, '#yardcov_measure' do
+  subject { described_class.new(:yardcov_measure, options).yardcov_measure }
 
   let(:config)        { double('config', path: 'tmp', output: report_writer) }
   let(:report_writer) { double('report writer')                              }
@@ -11,7 +11,7 @@ describe Yardstick::Rake::Measurement, '#yardstick_measure' do
   let(:measurements)  { double('measurements')                               }
   let(:io)            { double('io')                                         }
 
-  it 'writes yardstick results' do
+  it 'writes results' do
     allow(Yardstick::Config)
       .to receive(:coerce).with(options).and_return(config)
     allow(Yardstick)
